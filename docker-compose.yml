@@ -7,8 +7,7 @@ services:
       context: .
     image: tailchat
     restart: unless-stopped
-    env_file: 
-      - path: /home/ubuntu/composes/tailchat/docker-compose.env
+    env_file: "/home/ubuntu/composes/tailchat/docker-compose.env"
     environment:
       SERVICES: core/gateway,core/user/*.service.js,core/group/*.service.js,core/chat/*.service.js,core/file,core/plugin/registry,core/config
       PORT: 3000
@@ -29,8 +28,7 @@ services:
       context: .
     image: tailchat
     restart: unless-stopped
-    env_file: 
-      - path: /home/ubuntu/composes/tailchat/docker-compose.env
+    env_file: "/home/ubuntu/composes/tailchat/docker-compose.env"
     environment:
       SERVICES: openapi/app,openapi/bot,openapi/integration,openapi/oidc/oidc
       OPENAPI_PORT: 3003
@@ -52,8 +50,7 @@ services:
       context: .
     image: tailchat
     restart: unless-stopped
-    env_file: 
-      - path: /home/ubuntu/composes/tailchat/docker-compose.env
+    env_file: "/home/ubuntu/composes/tailchat/docker-compose.env"
     environment:
       SERVICEDIR: plugins
     depends_on:
@@ -69,8 +66,7 @@ services:
       context: .
     image: tailchat
     restart: unless-stopped
-    env_file: 
-      - path: /home/ubuntu/composes/tailchat/docker-compose.env
+    env_file: "/home/ubuntu/composes/tailchat/docker-compose.env"
     depends_on:
       - mongo
       - redis
@@ -88,8 +84,7 @@ services:
       context: .
     image: tailchat
     restart: unless-stopped
-    env_file: 
-      - path: /home/ubuntu/composes/tailchat/docker-compose.env
+    env_file: "/home/ubuntu/composes/tailchat/docker-compose.env"
     environment:
       LIVEKIT_WEBHOOK_PORT: 3000
     depends_on:
